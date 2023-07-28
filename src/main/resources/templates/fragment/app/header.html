@@ -1,0 +1,59 @@
+<th:block xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	th:fragment="header">
+	<header class="header">
+		<nav class="navbar container">
+			<!-- logo -->
+			<div class="order-0">
+				<a  th:href="@{/home}"> <img src="images/logo-pav.png" height="30"
+					width="147" alt="logo" />
+				</a>
+			</div>
+			<!-- navbar toggler -->
+			<input id="nav-toggle" type="checkbox" class="hidden" /> <label
+				id="show-button" for="nav-toggle"
+				class="order-1 flex cursor-pointer items-center lg:order-1 lg:hidden">
+				<svg class="h-6 fill-current" viewBox="0 0 20 20">
+          <title>Menu Open</title>
+          <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
+        </svg>
+			</label> <label id="hide-button" for="nav-toggle"
+				class="order-2 hidden cursor-pointer items-center lg:order-1">
+				<svg class="h-6 fill-current" viewBox="0 0 20 20">
+          <title>Menu Close</title>
+          <polygon
+						points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
+						transform="rotate(45 10 10)"></polygon>
+        </svg>
+			</label>
+			<!-- /navbar toggler -->
+			<ul id="nav-menu"
+				class="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5">
+				<li class="nav-item"><a th:href="@{/home}"
+					th:class="${route=='/home' ? 'nav-link active':'nav-link'}">Home</a></li>
+				<li class="nav-item"><a th:class="${route=='/about' ? 'nav-link active':'nav-link'}" href="about.html" class="nav-link">About</a>
+				</li>
+				<li class="nav-item"><a th:class="${route=='/stories' ? 'nav-link active':'nav-link'}" href="blog.html" class="nav-link">Blog</a>
+				</li>
+				<li class="nav-item"><a th:class="${route=='/change-logs' ? 'nav-link active':'nav-link'}" href="changelogs.html" class="nav-link">Changelogs</a>
+				</li>
+				<li class="nav-item"><a th:class="${route=='/contact' ? 'nav-link active':'nav-link'}" th:href="@{/contact}" class="nav-link">Contact</a>
+				</li>
+				<li class="nav-item mt-3.5 lg:hidden"><a
+					class="btn btn-white btn-sm border-border" th:href="@{/login}"
+					sec:authorize="!isAuthenticated()">Sign In</a></li>
+				<li class="nav-item mt-3.5 lg:hidden"><a
+					sec:authorize="!isAuthenticated()" th:href="@{/logout}"
+					class="btn btn-white btn-sm border-border">Logout</a></li>
+
+			</ul>
+			<div
+				class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
+				<a class="btn btn-white btn-sm" sec:authorize="!isAuthenticated()"
+					th:href="@{/login}">Sign In</a> <a class="btn btn-white btn-sm"
+					sec:authorize="isAuthenticated()" th:href="@{/}"
+					th:text="${'Hi, ' +#authentication.getPrincipal().name}"></a>
+			</div>
+		</nav>
+	</header>
+</th:block>
