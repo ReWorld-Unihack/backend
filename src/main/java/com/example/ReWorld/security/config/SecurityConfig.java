@@ -4,6 +4,7 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -45,55 +46,43 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.disable())
-                .httpBasic(httpBasic -> httpBasic.authenticationEntryPoint(restServicesEntryPoint()))
-                .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/**", "/oauth2/**", "/css/**", "/js/**", "/fonts/**", "/images/**")
-                        .permitAll()
-                        .anyRequest()
-                        .authenticated())
-                .formLogin((form) -> form
-                        .usernameParameter("username")
-                        .passwordParameter("password")
-                        .loginPage("/login").failureUrl("/login?error=true").permitAll())
-                .rememberMe((rememberMe) -> rememberMe
-                        .rememberMeParameter("remember")
-                        .tokenValiditySeconds(86400 * 30)
-                        .userDetailsService(userService))
-                .oauth2Login(oauth2Customize -> oauth2Customize
-                        .loginPage("/login")
-                        .userInfoEndpoint()
-                        .userService(oauthUserService)
-                        .and()
-                        .successHandler(new AuthenticationSuccessHandler() {
-                            @Override
-                            public void onAuthenticationSuccess(HttpServletRequest request,
-                                                                                        HttpServletResponse response, Authentication authentication)
-                                    throws IOException, ServletException {
-                                response.sendRedirect("/home");
-                            }
-                        }))
-                .formLogin(login -> login // Configure form-based login again for your custom login page
-                        .loginPage("/login")
-                        .successHandler(new AuthenticationSuccessHandler() {
-                            @Override
-                            public void onAuthenticationSuccess(HttpServletRequest request,
-                                                                                HttpServletResponse response, Authentication authentication)
-                                    throws IOException, ServletException {
-                                response.sendRedirect("/home");
-                            }
-                        })
-                        .permitAll())
-                .logout(logout -> logout
-                        .logoutSuccessUrl("/login")
-                        .deleteCookies("JSESSIONID")
-                        .invalidateHttpSession(true))
-                .exceptionHandling(handling -> handling
-                        .accessDeniedHandler(customAccessDeniedHandler()))
-                .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
-	    return http.build();
+		http.csrf(csrf -> csrf.disable())
+				.httpBasic(httpBasic -> httpBasic.authenticationEntryPoint(restServicesEntryPoint()))
+				.authorizeHttpRequests((authz) -> authz
+						.requestMatchers("/chat-contact", "/", "/about", "/home", "/scripts/**", "/styles/**",
+								"/plugins/**", "/oauth2/**", "/css/**", "/js/**", "/fonts/**", "/images/**")
+						.permitAll().requestMatchers("/order-logs", "/contact", "/order").authenticated()
+						.requestMatchers(HttpMethod.GET,"/story","/story/**").permitAll()
+						.requestMatchers("/admin/**").hasRole("ADMIN").requestMatchers(HttpMethod.POST, "/story")
+						.authenticated().requestMatchers("/add-story").authenticated().anyRequest().authenticated())
+				.formLogin((form) -> form.usernameParameter("username").passwordParameter("password")
+						.loginPage("/login").failureUrl("/login?error=true").permitAll())
+				.rememberMe((rememberMe) -> rememberMe.rememberMeParameter("remember").tokenValiditySeconds(86400 * 30)
+						.userDetailsService(userService))
+				.oauth2Login(oauth2Customize -> oauth2Customize.loginPage("/login").userInfoEndpoint()
+						.userService(oauthUserService).and().successHandler(new AuthenticationSuccessHandler() {
+							@Override
+							public void onAuthenticationSuccess(HttpServletRequest request,
+									HttpServletResponse response, Authentication authentication)
+									throws IOException, ServletException {
+								response.sendRedirect("/home");
+							}
+						}))
+				.formLogin(login -> login // Configure form-based login again for your custom login page
+						.loginPage("/login").successHandler(new AuthenticationSuccessHandler() {
+							@Override
+							public void onAuthenticationSuccess(HttpServletRequest request,
+									HttpServletResponse response, Authentication authentication)
+									throws IOException, ServletException {
+								response.sendRedirect("/home");
+							}
+						}).permitAll())
+				.logout(logout -> logout.logoutSuccessUrl("/login").deleteCookies("JSESSIONID")
+						.invalidateHttpSession(true))
+				.exceptionHandling(handling -> handling.accessDeniedHandler(customAccessDeniedHandler()))
+				.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED));
+		return http.build();
 	}
-
 
 	@Bean
 	public AuthenticationProvider authenticationProvider() {

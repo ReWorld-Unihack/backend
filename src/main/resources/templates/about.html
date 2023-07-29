@@ -7,13 +7,12 @@
  // GITHUB: https://github.com/themefisher/
 -->
 
-<html lang="zxx">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 
 <!-- Mirrored from themewagon.github.io/pinwheel/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:36:55 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
   <!-- favicon -->
-  <link rel="shortcut icon" href="images/favicon.png" />
   <!-- theme meta -->
   <meta name="theme-name" content="Pinwheel" />
   <meta name="msapplication-TileColor" content="#000000" />
@@ -37,7 +36,7 @@
   />
 
   <!-- title -->
-  <title>Pinwheel-tailwind</title>
+<title>Forever Pawprints</title>
 
   <!-- noindex robots -->
   <meta name="robots" content="" />
@@ -72,7 +71,7 @@
   <!-- google font css -->
   <link rel="preconnect" href="https://fonts.googleapis.com/" />
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-
+<link rel="icon" sizes="32x32" th:href="@{/images/logo-pavp.png}">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
     rel="stylesheet"
@@ -83,7 +82,7 @@
   />
 
   <!-- styles -->
-
+ <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <!-- Swiper slider -->
   <link rel="stylesheet" href="plugins/swiper/swiper-bundle.css" />
 
@@ -96,70 +95,7 @@
   <link href="styles/main.css" rel="stylesheet" />
 </head>
 
-<header class="header">
-  <nav class="navbar container">
-    <!-- logo -->
-    <div class="order-0">
-      <a href="index.html">
-        <img src="images/logo-pav.png" height="30" width="147" alt="logo" />
-      </a>
-    </div>
-    <!-- navbar toggler -->
-    <input id="nav-toggle" type="checkbox" class="hidden" />
-    <label
-      id="show-button"
-      for="nav-toggle"
-      class="order-1 flex cursor-pointer items-center lg:order-1 lg:hidden"
-    >
-      <svg class="h-6 fill-current" viewBox="0 0 20 20">
-        <title>Menu Open</title>
-        <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z"></path>
-      </svg>
-    </label>
-    <label
-      id="hide-button"
-      for="nav-toggle"
-      class="order-2 hidden cursor-pointer items-center lg:order-1"
-    >
-      <svg class="h-6 fill-current" viewBox="0 0 20 20">
-        <title>Menu Close</title>
-        <polygon
-          points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-          transform="rotate(45 10 10)"
-        ></polygon>
-      </svg>
-    </label>
-    <!-- /navbar toggler -->
-    <ul
-      id="nav-menu"
-      class="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5"
-    >
-      <li class="nav-item">
-        <a href="index.html" class="nav-link active">Home</a>
-      </li>
-      <li class="nav-item">
-        <a href="about.html" class="nav-link">About</a>
-      </li>
-      <li class="nav-item">
-        <a href="blog.html" class="nav-link">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a href="changelogs.html" class="nav-link">Changelogs</a>
-      </li>
-      <li class="nav-item">
-        <a href="contact.html" class="nav-link">Contact</a>
-      </li>
-      <li class="nav-item mt-3.5 lg:hidden">
-        <a class="btn btn-white btn-sm border-border" href="signin.html"
-          >Sing Up Now</a
-        > 
-      </li>
-    </ul>
-    <div class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
-      <a class="btn btn-white btn-sm" href="signin.html">Sing Up Now</a>
-    </div>
-  </nav>
-</header>
+<div th:replace="fragment/app/header.html :: header"></div>
 
 <body><!-- floating assets -->
 <img
@@ -181,7 +117,7 @@
 
 <!-- Common hero -->
 <section class="page-hero py-16">
-  <div class="container">
+  <div class="container" data-aos="fade">
     <div class="text-center">
       <ul
         class="breadcrumb inline-flex h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2"
@@ -201,16 +137,16 @@
                 fill="black"
               />
             </svg>
-            <span class="text-sm leading-none">Home</span>
+            <span class="text-sm leading-none">Trang chủ</span>
           </a>
         </li>
         <li class="leading-none text-dark">
-          <span class="text-sm leading-none">/ About Us</span>
+          <span class="text-sm leading-none">/ Về chúng tôi</span>
         </li>
       </ul>
     </div>
     <div class="page-hero-content mx-auto max-w-[768px] text-center">
-      <h1 class="mb-5 mt-8">About our company</h1>
+      <h1 class="mb-5 mt-8">Về chúng tôi</h1>
       </div>
     </div>
     <div class="counter mt-16">
@@ -219,18 +155,18 @@
           class="border-border px-10 py-10 text-center sm:col-6 lg:col-3 lg:border-r lg:py-0"
         >
           <h2>
-            <span class="count">25M</span> <span class="text-[#A3A1FB]">+</span>
+            <span class="count">40M</span> <span class="text-[#A3A1FB]">+</span>
           </h2>
-          <p>Customers</p>
+          <p>Doang thu</p>
         </div>
         <div
           class="border-border px-10 py-10 text-center sm:col-6 lg:col-3 lg:border-r lg:py-0"
         >
           <h2>
-            <span class="count">20</span>
+            <span class="count">50</span>
             <span class="text-[#5EE2A0]">+</span>
           </h2>
-          <p>Products sold</p>
+          <p>Đơn hàng</p>
         </div>
         <div
           class="border-border px-10 py-10 text-center sm:col-6 lg:col-3 lg:border-r lg:py-0"
@@ -238,13 +174,13 @@
           <h2>
             <span class="count">50K</span> <span class="text-primary">+</span>
           </h2>
-          <p>Online stores</p>
+          <p>Lượt tương tác</p>
         </div>
         <div class="px-10 py-10 text-center sm:col-6 lg:col-3 lg:py-0">
           <h2>
             <span class="count">20K</span> <span class="text-[#FEC163]">+</span>
           </h2>
-          <p>Transactions</p>
+          <p>Lượt theo dõi</p>
         </div>
       </div>
     </div>
@@ -256,16 +192,114 @@
 <!-- Works -->
 <section class="section">
   <div class="container">
+  	<div class="row mt-10 integration-tab-items"  data-aos="fade">
+      <div class="mb-8 md:col-6 lg:col-4 integration-tab-item" data-groups='["social"]'>
+        <div class="rounded-xl bg-white px-10 pt-11 pb-8 shadow-lg">
+          <div class="integration-card-head flex items-center space-x-4">
+            <img src="images/icons/facebook-colored.svg" alt="" />
+            <div>
+              <h4 class="h4">Facebook</h4>
+              <span class="font-medium">Social media</span>
+            </div>
+          </div>
+          <div class="my-5 border-y border-border py-5">
+            <p>
+              Phúc An Viên - Hoả táng thú cưng Đà Nẵng (DaNang Peace pet cremation)
+            </p>
+          </div>
+          <a class="inline-flex items-center font-semibold text-dark" href="https://www.facebook.com/Peacepetcremation">
+            View integration
+            <svg
+              class="ml-1.5"
+              width="13"
+              height="16"
+              viewBox="0 0 13 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+		<div class="mb-8 md:col-6 lg:col-4 integration-tab-item" data-groups='["social"]'>
+        <div class="rounded-xl bg-white px-10 pt-11 pb-8 shadow-lg">
+          <div class="integration-card-head flex items-center space-x-4">
+            <img th:src="@{/images/icons/tik-tok.png}" alt="" width="80" height="80"/>
+            <div>
+              <h4 class="h4">Tik Tok</h4>
+              <span class="font-medium">Social media</span>
+            </div>
+          </div>
+          <div class="my-5 border-y border-border py-5">
+            <p>
+              Phúc An Viên - Hoả táng thú cưng Đà Nẵng (DaNang Peace pet cremation)
+            </p>
+          </div>
+          <a class="inline-flex items-center font-semibold text-dark" href="https://www.tiktok.com/@phucanvienhoatangthucung?fbclid=IwAR2ZkvHcugmF7G8jrPM0zeNJ2o1yJhC98nrTFF0Ze7YmKlqwKrblqHz5Yao">
+            View integration
+            <svg
+              class="ml-1.5"
+              width="13"
+              height="16"
+              viewBox="0 0 13 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="mb-8 md:col-6 lg:col-4 integration-tab-item" data-groups='["social"]'>
+        <div class="rounded-xl bg-white px-10 pt-11 pb-8 shadow-lg">
+          <div class="integration-card-head flex items-center space-x-4">
+            <img th:src="@{/images/icons/instagram.png}" alt="" width="80" height="80"/>
+            <div>
+              <h4 class="h4">Instagram</h4>
+              <span class="font-medium">Social media</span>
+            </div>
+          </div>
+          <div class="my-5 border-y border-border py-5">
+            <p>
+              Phúc An Viên - Hoả táng thú cưng Đà Nẵng (DaNang Peace pet cremation)
+            </p>
+          </div>
+          <a class="inline-flex items-center font-semibold text-dark" href="https://www.instagram.com/peacepetcremationdanang/?fbclid=IwAR3kfrhsdT7v8vdCktNfeturxZb0BPKgXF6gf3rkew4tidvjTeuO7ghVfpo">
+            View integration
+            <svg
+              class="ml-1.5"
+              width="13"
+              height="16"
+              viewBox="0 0 13 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.7071 8.70711C13.0976 8.31658 13.0976 7.68342 12.7071 7.29289L6.34315 0.928932C5.95262 0.538408 5.31946 0.538408 4.92893 0.928932C4.53841 1.31946 4.53841 1.95262 4.92893 2.34315L10.5858 8L4.92893 13.6569C4.53841 14.0474 4.53841 14.6805 4.92893 15.0711C5.31946 15.4616 5.95262 15.4616 6.34315 15.0711L12.7071 8.70711ZM0 9H12V7H0V9Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+     </div>
     <div class="row items-center justify-between">
       <div class="md:col-5">
-        <h2 class="text-center md:text-left">
+        <h2 class="text-center md:text-left"  data-aos="fade-right">
           Chúng tôi mang sứ mệnh cao cả
         </h2>
       </div>
     </div>
     <div class="row mt-14">
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
+      <div class="mb-8 sm:col-6 lg:col-4"  data-aos="fade-up">
+        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8 h-full">
           <div class="gradient-number relative inline-block">
             <span
               class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -273,14 +307,14 @@
             >
             <img src="images/gradient-number-bg.svg" alt="" />
           </div>
-          <h4 class="my-6">Accessibility</h4>
+          <h4 class="my-6">Khả năng tiếp cận</h4>
           <p>
             PAV cung cấp dịch vụ hoả táng thú cưng chuyên nghiệp và đảm bảo chất lượng. Đội ngũ nhân viên có kinh nghiệm và tâm huyết sẽ đảm bảo rằng thú cưng của bạn được xử lý đúng cách và cẩn thận.
           </p>
         </div>
       </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
+      <div class="mb-8 sm:col-6 lg:col-4"   data-aos="fade-up">
+        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8 h-full">
           <div class="gradient-number relative inline-block">
             <span
               class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -288,14 +322,14 @@
             >
             <img src="images/gradient-number-bg.svg" alt="" />
           </div>
-          <h4 class="my-6">Empowerement</h4>
+          <h4 class="my-6">Quyền lợi</h4>
           <p>
             PAV luôn đặt mình vào cảm xúc của bạn, chúng mình hiểu và cảm nhận những gì bạn đã trải qua không hề dễ dàng trước sự ra đi đột ngột của bé. PAV sẽ đem đến cho bạn niềm an ủi và sẻ chia bằng sự tiễn đưa tốt nhất.
           </p>
         </div>
       </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
+      <div class="mb-8 sm:col-6 lg:col-4"   data-aos="fade-up">
+        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8 h-full">
           <div class="gradient-number relative inline-block">
             <span
               class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -303,14 +337,14 @@
             >
             <img src="images/gradient-number-bg.svg" alt="" />
           </div>
-          <h4 class="my-6">Innovation</h4>
+          <h4 class="my-6">Sự đổi mới</h4>
           <p>
             PAV cung cấp các tiện ích và dịch vụ hỗ trợ cho gia đình như đón thú cưng từ nhà, tư vấn và hướng dẫn về quy trình hoả táng, tạo ra 1 không gian lưu niệm đáng nhớ cho thú cưng của bạn.
           </p>
         </div>
       </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
+      <div class="mb-8 sm:col-6 lg:col-4"   data-aos="fade-up">
+        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8 h-full">
           <div class="gradient-number relative inline-block">
             <span
               class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -318,14 +352,14 @@
             >
             <img src="images/gradient-number-bg.svg" alt="" />
           </div>
-          <h4 class="my-6">Excellence</h4>
+          <h4 class="my-6">Xuất sắc</h4>
           <p>
             PAV sử dụng trang thiết bị hiện đại để đảm bảo rằng quá trình hoả táng được thực hiện an toàn và hiệu quả. PAV tuân thủ nghiêm túc vấn đề phòng cháy chữa cháy, được kiểm soát tối đa để đảm bảo sự chính xác và đáng tin cậy. PAV luôn nhắm đến sự tận tâm cho các bé và tính minh bạch cho chủ nuôi nên cả quy trình thiêu sẽ luôn có video quay lại.
           </p>
         </div>
       </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
+      <div class="mb-8 sm:col-6 lg:col-4"   data-aos="fade-up">
+        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8 h-full">
           <div class="gradient-number relative inline-block">
             <span
               class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -333,14 +367,14 @@
             >
             <img src="images/gradient-number-bg.svg" alt="" />
           </div>
-          <h4 class="my-6">Team work</h4>
+          <h4 class="my-6">Cộng tác</h4>
           <p>
             PAV cam kết tôn trọng và bảo vệ môi trường bằng cách sử dụng những phương pháp hoả táng thân thiện với môi trường và đáp ứng tiêu chuẩn và quy định về bảo vệ môi trường.
           </p>
         </div>
       </div>
-      <div class="mb-8 sm:col-6 lg:col-4">
-        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8">
+      <div class="mb-8 sm:col-6 lg:col-4"   data-aos="fade-up">
+        <div class="rounded-xl bg-white p-6 shadow-lg lg:p-8 h-full">
           <div class="gradient-number relative inline-block">
             <span
               class="bg-gradient absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -348,7 +382,7 @@
             >
             <img src="images/gradient-number-bg.svg" alt="" />
           </div>
-          <h4 class="my-6">Responsibility</h4>
+          <h4 class="my-6">Trách nhiệm</h4>
           <p>
             PAV cung cấp dịch vụ hoả táng với chi phí hợp lý so với các dịch vụ tương tự khác trên thị trường. Điều này đảm bảo rằng bạn sẽ có được giá trị tốt nhất khi sử dụng dịch vụ của PAV.
           </p>
@@ -358,85 +392,7 @@
   </div>
 </section>
 <!-- ./end Works -->
-
-<footer class="footer bg-theme-light/50">
-  <div class="container">
-    <div class="row gx-5 pb-10 pt-[52px]">
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <a href="index.html">
-          <img src="images/logo-pav.png" alt="" />
-        </a>
-        <p class="mt-6">
-          Chúng tôi ra đời với mục đích là nơi dừng chân bình yêu cuối cùng cho các bé.
-        </p>
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Socials</h6>
-        <p>phucanvienhoatangthucung@gmail.com</p>
-        <ul class="social-icons mt-4 lg:mt-6">
-          <li>
-            <a href="https://www.facebook.com/Peacepetcremation">
-              <svg
-                width="19"
-                height="21"
-                viewBox="0 0 20 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg" >
-                <path
-                  d="M19.1056 10.4495C19.1056 5.09642 15 0.759277 9.9327 0.759277C4.86539 0.759277 0.759766 5.09642 0.759766 10.4495C0.759766 15.2946 4.08865 19.3191 8.49018 20.0224V13.2627H6.15996V10.4495H8.49018V8.33951C8.49018 5.91696 9.85872 4.54939 11.93 4.54939C12.9657 4.54939 14.0013 4.74476 14.0013 4.74476V7.12823H12.8547C11.7081 7.12823 11.3382 7.87063 11.3382 8.65209V10.4495H13.8904L13.4835 13.2627H11.3382V20.0224C15.7398 19.3191 19.1056 15.2946 19.1056 10.4495Z"
-                  fill="#222222"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.tiktok.com/@phucanvienhoatangthucung?fbclid=IwAR144F9g5O19SeFV-9CJmSJFRpYxSwJpWQhcGEKFhzdLBnbev6e71m_o11k">
-              <svg
-                width="19"
-                height="15"
-                viewBox="0 0 19 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.3308 3.92621C17.0129 3.42889 17.6269 2.83209 18.1044 2.13583C17.4904 2.40108 16.7742 2.60001 16.0579 2.66632C16.8083 2.2353 17.354 1.5722 17.6269 0.743317C16.9447 1.14118 16.1603 1.43958 15.3758 1.60535C14.6937 0.909093 13.7728 0.51123 12.7496 0.51123C10.7714 0.51123 9.16837 2.06952 9.16837 3.99252C9.16837 4.25777 9.20248 4.52301 9.27069 4.78825C6.3034 4.62247 3.64307 3.22995 1.86952 1.14118C1.56256 1.63851 1.39202 2.2353 1.39202 2.8984C1.39202 4.09199 2.00595 5.15296 2.99504 5.7829C2.41523 5.74975 1.83541 5.61713 1.35792 5.35189V5.38504C1.35792 7.07596 2.58576 8.46847 4.22289 8.80002C3.95003 8.86633 3.60897 8.93265 3.302 8.93265C3.06326 8.93265 2.85862 8.89949 2.61987 8.86633C3.06326 10.2589 4.39342 11.2535 5.96233 11.2867C4.73449 12.215 3.19968 12.7786 1.52845 12.7786C1.22149 12.7786 0.948636 12.7455 0.675781 12.7123C2.24469 13.707 4.12057 14.2706 6.16698 14.2706C12.7496 14.2706 16.3308 8.99896 16.3308 4.39039C16.3308 4.22461 16.3308 4.09199 16.3308 3.92621Z"
-                  fill="#222222"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/peacepetcremationdanang/?fbclid=IwAR2ziu7iJRYAmcqNegS8DLz7OsXS2oXyExbPxpk6LGB4ooEdObw09_2r1pE">
-              <svg
-                width="19"
-                height="16"
-                viewBox="0 0 19 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.56609 15.2704V5.45315H0.948103V15.2704H4.56609ZM2.73764 4.1398C3.90474 4.1398 4.83841 3.31895 4.83841 2.33394C4.83841 1.38176 3.90474 0.59375 2.73764 0.59375C1.60945 0.59375 0.675781 1.38176 0.675781 2.33394C0.675781 3.31895 1.60945 4.1398 2.73764 4.1398ZM18.0654 15.2704H18.1044V9.8857C18.1044 7.259 17.4041 5.22331 13.7472 5.22331C11.9966 5.22331 10.8295 6.04415 10.3237 6.79933H10.2848V5.45315H6.82246V15.2704H10.4404V10.411C10.4404 9.13053 10.7128 7.91568 12.5801 7.91568C14.4475 7.91568 14.4864 9.36036 14.4864 10.5095V15.2704H18.0654Z"
-                  fill="#222222"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-12 mt-12 md:col-6 lg:col-3">
-        <h6>Location & Contact</h6>
-        <p>Hoà Sơn, Da Nang, Vietnam</p>
-        <p>0972 427 197</p>
-      </div>
-    </div>
-  </div>
-  <div class="container max-w-[1440px]">
-    <div
-      class="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center" >
-      <p>Designed And Developed by ReWorld-Unihack</p>     
-    </div>
-  </div>
-</footer>
+<div th:replace="fragment/app/footer.html :: footer"></div>
 
 <!-- jQuery -->
 <!-- <script src="plugins/jquery/jquery.min.js"></script> -->
@@ -446,6 +402,10 @@
 
 <!-- Main Script -->
 <script src="scripts/main.js"></script>
+ <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
 </body>
 

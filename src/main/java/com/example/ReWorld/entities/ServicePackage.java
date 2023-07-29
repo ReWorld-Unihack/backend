@@ -12,12 +12,15 @@ public class ServicePackage {
 	@Column(length = 100)
 	private String name;
 	
-	@Column(length = 1000)
+	@Column(length = 10000)
 	private String description;
 	
 	@Column(nullable = false)
 	private Integer price;
-
+	
+	@Column(length = 255)
+	private String image;
+	
 	public ServicePackage() {
 	}
 	
@@ -58,6 +61,14 @@ public class ServicePackage {
 
 	public void setPrice(Integer price) {
 		this.price = price;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 	

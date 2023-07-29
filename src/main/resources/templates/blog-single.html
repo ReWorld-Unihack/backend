@@ -9,12 +9,13 @@
 
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
 
-<!-- Mirrored from themewagon.github.io/pinwheel/changelogs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:13 GMT -->
+<!-- Mirrored from themewagon.github.io/pinwheel/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:15 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <!-- /Added by HTTrack -->
 <head>
 <!-- favicon -->
+<link rel="shortcut icon" href="images/favicon.png}" />
 <!-- theme meta -->
 <meta name="theme-name" content="Pinwheel" />
 <meta name="msapplication-TileColor" content="#000000" />
@@ -30,7 +31,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=5" />
 
 <!-- title -->
-<title>Forever Pawprints</title>
+<title>Pinwheel-tailwind</title>
 
 <!-- noindex robots -->
 <meta name="robots" content="" />
@@ -79,83 +80,111 @@
 <link rel="stylesheet" th:href="@{/plugins/swiper/swiper-bundle.css}" />
 
 <!-- Fontawesome -->
+<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 <link rel="stylesheet" th:href="@{/plugins/font-awesome/v6/brands.css}" />
 <link rel="stylesheet" th:href="@{/plugins/font-awesome/v6/solid.css}" />
 <link rel="stylesheet"
 	th:href="@{/plugins/font-awesome/v6/fontawesome.css}" />
-<link rel="icon" sizes="32x32" th:href="@{/images/logo-pavp.png}">
+
 <!-- Main Stylesheet -->
 <link th:href="@{/styles/main.css}" rel="stylesheet" />
+<link th:href="@{/styles/blog.css}" rel="stylesheet" />
 </head>
 
 <div th:replace="fragment/app/header.html :: header"></div>
-
 <body>
 	<!-- floating assets -->
 	<img class="floating-bubble-1 absolute right-0 top-0 -z-[1]"
-		src="images/floating-bubble-1.svg" alt="" />
+		th:src="@{/images/floating-bubble-1.svg}" alt="" />
 	<img class="floating-bubble-2 absolute left-0 top-[387px] -z-[1]"
-		src="images/floating-bubble-2.svg" alt="" />
+		th:src="@{/images/floating-bubble-2.svg}" alt="" />
 	<img class="floating-bubble-3 absolute right-0 top-[605px] -z-[1]"
-		src="images/floating-bubble-3.svg" alt="" />
+		th:src="@{/images/floating-bubble-3.svg}" alt="" />
 	<!-- ./end floating assets -->
 
-	<!-- Common hero -->
-	<section class="page-hero pt-16 pb-14">
-		<div class="container">
-			<div class="text-center">
-				<ul
-					class="breadcrumb inline-flex h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2">
-					<li class="leading-none text-dark"><a
-						class="inline-flex items-center text-primary" href="#"> <svg
-								class="mr-1.5" width="15" height="15" viewBox="0 0 16 16"
-								fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-									d="M13.1769 15.0588H10.3533V9.41178H5.64744V15.0588H2.82391V6.58825H1.88274V16H14.118V6.58825H13.1769V15.0588ZM6.58862 15.0588V10.353H9.41215V15.0588H6.58862ZM15.8084 6.09225L15.2512 6.85178L8.00038 1.52472L0.749559 6.8499L0.192383 6.09131L8.00038 0.357666L15.8084 6.09225Z"
-									fill="black" />
-            </svg> <span class="text-sm leading-none">Home</span>
-					</a></li>
-					<li class="leading-none text-dark"><span
-						class="text-sm leading-none">/ Changelogs</span></li>
-				</ul>
-			</div>
-			<div class="page-hero-content mx-auto max-w-[768px] text-center">
-				<h1 class="mt-8">Trạng thái các đơn hàng</h1>
-			</div>
-		</div>
-	</section>
-	<!-- end Common hero -->
-
-	<section class="section changelogs pt-0">
+	<!-- blog single -->
+	<section class="section blog-single">
 		<div class="container">
 			<div class="row justify-center">
 				<div class="lg:col-10">
-					<div class="row mb-10 lg:mt-0" th:each="log: ${logs}">
-						<div class="lg:col-3">
-							<h6 class="mb-4 pl-7 text-lg lg:mt-0 lg:pl-0"
-								th:text="${#temporals.format(log.date, 'dd-MM-yyyy HH:mm')}">>13.3.1
-								(Octobor 15,2020)</h6>
-							<h6 class="mb-4 pl-7 text-lg lg:mt-0 lg:pl-0"
-								th:text="${'Mã đơn: '+log.order.id}">>13.3.1 (Octobor
-								15,2020)</h6>
+					<img class="rounded-xl" th:src="${story.image}"
+						style="min-width: 80%; margin: auto;" alt="" />
+				</div>
+				<div class="mt-10 max-w-[810px] lg:col-9">
+					<h1 class="h2" th:text="${story.title}">Memo To All
+						Housekeeping, Kitchen, & Dining Room Staff At Mar-A-Lago</h1>
+					<div class="mt-6 mb-5 flex items-center space-x-2 relative">
+						<div
+							class="blog-author-avatar h-[58px] w-[58px] rounded-full border-2 border-primary p-0.5">
+							<img th:src="${story.user.avatar}" alt="" class="rounded-full" />
 						</div>
-						<div class="border-border lg:col-9 lg:border-l lg:pl-10 lg:pb-10">
-							<div
-								class="changelogs-content rounded-xl bg-white p-6 shadow-lg lg:p-10">
-								<span class="changelogs-tag bg-[#3A9CFF]"
-									th:text="${log.status}">Changed</span>
-								<ul>
-									<li th:text="${log.message}">Enhance or improve <span>User
-											experience</span>, our Site, or our Service.
-									</li>
-								</ul>
+						<div class="">
+							<p class="text-dark" th:text="${story.user.name}">Cameron
+								Williamson</p>
+							<span class="text-sm" th:text="${story.date}">Nov 28,
+								2019. 5 Min read</span>
+						</div>
+						<i class="fa-regular fa-heart favorite-btn absolute"></i>
+					</div>
+
+					<div class="content" th:utext="${story.content}"></div>
+					<div class="comments">
+						<h3
+							class="h5 inline-block border-b-[3px] border-primary font-primary font-medium leading-8">
+							Comments</h3>
+						<div class="comment flex space-x-4 border-b border-border py-8">
+							<img th:src="@{/images/comment-author-1.png}"
+								class="h-[70px] w-[70px] rounded-full" alt="" />
+							<div>
+								<h4 class="font-primary text-lg font-medium capitalize">
+									ronin bishop</h4>
+								<p class="mt-2.5">
+									April 18, 2020 at 6.25 pm <a class="ml-4 text-primary" href="#">Replay</a>
+								</p>
+								<p class="mt-5">Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit. Nec et ipsum ullamcorper venenatis fringilla.
+									Pretium, purus eu nec vulputate vel habitant egestas.ornare
+									ipsum</p>
+							</div>
+						</div>
+						<div class="comment flex space-x-4 py-8">
+							<img th:src="@{/images/icons/replay-arrow.svg}" alt="" /> <img
+								th:src="@{/images/comment-author-2.png}"
+								class="h-[70px] w-[70px] rounded-full" alt="" />
+							<div>
+								<h4 class="font-primary text-lg font-medium capitalize">
+									Kathryn Murphy</h4>
+								<p class="mt-2.5">
+									April 18, 2020 at 6.25 pm <a class="ml-4 text-primary" href="#">Replay</a>
+								</p>
+								<p class="mt-5">Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit. Nec et ipsum ullamcorper venenatis fringilla.
+									Pretium, purus eu nec vulputate vel habitant egestas.ornare
+									ipsum</p>
 							</div>
 						</div>
 					</div>
+					<form class="comment-form" action="#" method="POST">
+						<p class="mb-4">LEAVE A REPLAY</p>
+						<div class="form-group">
+							<textarea cols="30" rows="10"></textarea>
+						</div>
+						<input type="Submit"
+							class="btn btn-primary mt-8 min-w-[189px] cursor-pointer"
+							value="Post Comment" />
+					</form>
 				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- ./end blog-single -->
 	<div
 		class="fixed left-0 top-0 z-50 flex w-[30px] items-center justify-center bg-gray-200 py-[2.5px] text-[12px] uppercase text-black sm:bg-red-200 md:bg-yellow-200 lg:bg-green-200 xl:bg-blue-200 2xl:bg-pink-200">
 		<span class="block sm:hidden">all</span> <span
@@ -175,8 +204,9 @@
 
 	<!-- Main Script -->
 	<script th:src="@{/scripts/main.js}"></script>
+	<script th:src="@{/scripts/blog.js}"></script>
 
 </body>
 
-<!-- Mirrored from themewagon.github.io/pinwheel/changelogs.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:13 GMT -->
+<!-- Mirrored from themewagon.github.io/pinwheel/blog-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:17 GMT -->
 </html>

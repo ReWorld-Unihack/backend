@@ -1,5 +1,7 @@
 package com.example.ReWorld.entities;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +16,8 @@ public class OrderStatus {
 
 	@Column(length = 255)
 	private String message;
+	
+	private LocalDateTime date;
 	
 	@OneToOne
 	@JoinColumn(name = "orders_id", referencedColumnName = "id", nullable = false)
@@ -61,6 +65,14 @@ public class OrderStatus {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public LocalDateTime getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDateTime date) {
+		this.date = date;
 	}
 
 }

@@ -20,10 +20,8 @@ public class Pet {
 	private LocalDate deathDate;
 
 	private LocalDate birthDate;
-
-	@ManyToOne
-	@JoinColumn(name = "species_id", referencedColumnName = "id", nullable = true)
-	private Species species;
+	
+	private String species;
 
 	@ManyToOne
 	@JoinColumn(name = "animals_id", referencedColumnName = "id", nullable = true)
@@ -37,7 +35,7 @@ public class Pet {
 	}
 
 	public Pet(Integer id, String name, Float weight, LocalDate deathDate, LocalDate birthDate,
-			Species species, Animal animal, Order order) {
+			String species, Animal animal, Order order) {
 		this.id = id;
 		this.name = name;
 		this.weight = weight;
@@ -88,11 +86,13 @@ public class Pet {
 		this.birthDate = birthDate;
 	}
 
-	public Species getSpecies() {
+
+
+	public String getSpecies() {
 		return species;
 	}
 
-	public void setSpecies(Species species) {
+	public void setSpecies(String species) {
 		this.species = species;
 	}
 

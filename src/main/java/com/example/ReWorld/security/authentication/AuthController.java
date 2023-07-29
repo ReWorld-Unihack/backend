@@ -35,7 +35,7 @@ public class AuthController {
 		return "signin";
 	}
 
-	@GetMapping("/register")
+	@GetMapping("/signup")
 	public String userRegister(@RequestParam(name = "error", required = false, defaultValue = "false") Boolean error,
 			Model model) {
 		if (error) {

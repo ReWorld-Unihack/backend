@@ -7,13 +7,14 @@
  // GITHUB: https://github.com/themefisher/
 -->
 
-<html xmlns:th="http://www.thymeleaf.org">
-
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <!-- Mirrored from themewagon.github.io/pinwheel/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:13 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <!-- /Added by HTTrack -->
 <head>
+<!-- favicon -->
+<link rel="shortcut icon" href="images/favicon.png" />
 <!-- theme meta -->
 <meta name="theme-name" content="Pinwheel" />
 <meta name="msapplication-TileColor" content="#000000" />
@@ -29,7 +30,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=5" />
 
 <!-- title -->
-<title>Forever Pawprints</title>
+<title>Pinwheel-tailwind</title>
 
 <!-- noindex robots -->
 <meta name="robots" content="" />
@@ -75,19 +76,20 @@
 <!-- styles -->
 
 <!-- Swiper slider -->
-<link rel="stylesheet" th:href="@{/plugins/swiper/swiper-bundle.css}" />
+<link rel="stylesheet" href="plugins/swiper/swiper-bundle.css" />
 
 <!-- Fontawesome -->
-<link rel="stylesheet" th:href="@{/plugins/font-awesome/v6/brands.css}" />
-<link rel="stylesheet" th:href="@{/plugins/font-awesome/v6/solid.css}" />
-<link rel="stylesheet"
-	th:href="@{/plugins/font-awesome/v6/fontawesome.css}" />
-<link rel="icon" sizes="32x32" th:href="@{/images/logo-pavp.png}">
+<link rel="stylesheet" href="plugins/font-awesome/v6/brands.css" />
+<link rel="stylesheet" href="plugins/font-awesome/v6/solid.css" />
+<link rel="stylesheet" href="plugins/font-awesome/v6/fontawesome.css" />
+
 <!-- Main Stylesheet -->
-<link th:href="@{/styles/main.css}" rel="stylesheet" />
+<link href="styles/main.css" rel="stylesheet" />
+<link rel="stylesheet" href="/styles/add-blog.css" />
 </head>
 
 <div th:replace="fragment/app/header.html :: header"></div>
+
 <body>
 	<!-- floating assets -->
 	<img class="floating-bubble-1 absolute right-0 top-0 -z-[1]"
@@ -108,47 +110,54 @@
 						class="inline-flex items-center text-primary" href="#"> <svg
 								class="mr-1.5" width="15" height="15" viewBox="0 0 16 16"
 								fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
+                  <path
 									d="M13.1769 15.0588H10.3533V9.41178H5.64744V15.0588H2.82391V6.58825H1.88274V16H14.118V6.58825H13.1769V15.0588ZM6.58862 15.0588V10.353H9.41215V15.0588H6.58862ZM15.8084 6.09225L15.2512 6.85178L8.00038 1.52472L0.749559 6.8499L0.192383 6.09131L8.00038 0.357666L15.8084 6.09225Z"
 									fill="black" />
-            </svg> <span class="text-sm leading-none">Trang chủ</span>
+                </svg> <span class="text-sm leading-none">Trang chủ</span>
 					</a></li>
 					<li class="leading-none text-dark"><span
-						class="text-sm leading-none">/ Liên hệ</span></li>
+						class="text-sm leading-none">/ Câu chuyện của bạn</span></li>
 				</ul>
 			</div>
 			<div class="page-hero-content mx-auto max-w-[768px] text-center">
-				<h1 class="mb-5 mt-8">Liên hệ đặt dịch vụ</h1>
+				<h1 class="mb-5 mt-8">Chia sẻ câu chuyện của bạn</h1>
 			</div>
 		</div>
 	</section>
 	<!-- end Common hero -->
 
 	<section class="section pt-0">
-		<form th:action="@{/order}" method="POST">
-			<div class="container">
+		<div class="container">
+			<form th:action="@{/story}" method="post">
 				<div class="row">
-
+					<div class="mb-10 text-center md:col-6 md:order-2 md:mb-0 md:pt-9">
+						<div class="form-group mb-5">
+							<label class="form-label" for="eamil">Hình ảnh</label>
+							<div>
+								<div>
+									<div id="img-preview"></div>
+									<input type="file" id="choose-file" accept="image/*" /> <label
+										for="choose-file">Chọn file</label> <label
+										onclick="uploadImage()" id="save-file">Lưu ảnh</label>
+								</div>
+							</div>
+							<input id="save-image" name="image" type="text" hidden />
+						</div>
+					</div>
 					<div class="md:col-6 md:order-1">
 						<div class="lg:max-w-[484px]">
 							<div class="form-group mb-5">
-								<label class="form-label" for="name">Tên bé</label> <input
-									name="name" class="form-control" type="text" id="name"
-									placeholder="Full Name Baby" />
+								<label class="form-label" for="name">Tiêu đề</label> <input
+									class="form-control" type="text" id="title"
+									placeholder="Tiêu đề" name="title" />
 							</div>
 							<div class="form-group mb-5">
-								<label class="form-label" for="eamil">Cân nặng</label> <input
-									name="weight" class="form-control" type="text"
-									placeholder="Weight" />
+								<label class="form-label" for="description">Mô tả</label>
+								<textarea class="form-control h-[150px]" id="Mô tả"
+									name="description" cols="30" rows="10">
+                  </textarea>
 							</div>
-							<div class="form-group mb-5">
-								<label class="form-label" for="eamil">Sinh nhật</label> <input
-									name="birthDate" class="form-control" type="date" />
-							</div>
-							<div class="form-group mb-5">
-								<label class="form-label" for="eamil">Ngày Đi</label> <input
-									name="deathDate" class="form-control" type="date" />
-							</div>
+
 							<div class="form-group mb-5">
 								<label for="countries"
 									class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Động
@@ -159,60 +168,88 @@
 								</select>
 							</div>
 							<div class="form-group mb-5">
-								<label class="form-label" for="eamil">Loài</label> <input
-									class="form-control" type="text" placeholder="ex. Mèo Moon"
-									name="species" />
-							</div>
-						</div>
-					</div>
-					<div class="md:col-6 md:order-1">
-						<div class="lg:max-w-[484px]">
-							<div class="form-group mb-5">
 								<label for="countries"
-									class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gói
-									dịch vụ</label> <select id="countries" name="serviceId"
-									class=" form-control">
-									<option th:each="service : ${services}"
-										th:value="${service.id}"
-										th:text="${service.name+': '+service.price}">Động vật</option>
+									class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Công
+									khai</label> <select id="countries" name="scope" class=" form-control">
+									<option value="public" selected="selected">Công khai</option>
+									<option value="private">Riêng mình tôi</option>
 								</select>
 							</div>
 							<div class="form-group mb-5">
-								<label class="form-label" for="eamil">Số điện thoại</label> <input
-									name="phone" class="form-control" type="text" />
-							</div>
-							<div class="form-group mb-5">
-								<label class="form-label" for="eamil">Địa chỉ đón bé</label> <input
-									class="form-control" type="text" name="address"
-									placeholder="ex. 135 ABC , Đà nẵng" />
+								<label class="form-label" for="eamil">Loài</label> <input
+									class="form-control" type="text" name="species"
+									placeholder="Loài" />
 							</div>
 
-							<div class="form-group mb-5">
-								<label class="form-label" for="message">Lời nhắn</label>
-								<textarea class="form-control h-[150px]" id="message" cols="30"
-									placeholder="nhắn gì đó cho chúng tôi về câu chuyện của bạn"
-									name="message" rows="10"></textarea>
-							</div>
-							<input class="btn btn-primary block w-full" type="submit"
-								value="Đặt dịch vụ" />
 						</div>
 					</div>
 				</div>
-			</div>
-
-		</form>
+				<div class="form-group mb-5">
+					<label class="form-label" for="content">Nội dung</label>
+					<textarea class="form-control h-[150px]" id="content"
+						name="content" cols="30" rows="10">
+                  </textarea>
+				</div>
+				<input class="btn btn-primary block w-full" type="submit"
+					value="Đăng tải" />
+			</form>
+		</div>
 	</section>
 
 	<div th:replace="fragment/app/footer.html :: footer"></div>
 	<!-- jQuery -->
-	<!-- <script th:src="@{/plugins/jquery/jquery.min.js}"></script> -->
+	<!-- <script src="plugins/jquery/jquery.min.js"></script> -->
 	<!-- Swiper JS -->
-	<script th:src="@{/plugins/swiper/swiper-bundle.js}"></script>
-	<script th:src="@{/plugins/shufflejs/shuffle.js}"></script>
+	<script src="plugins/swiper/swiper-bundle.js"></script>
+	<script src="plugins/shufflejs/shuffle.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+	<script
+		src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
+	<script>
+      //paste here your copied configuration code
+      const firebaseConfig = {
+        apiKey: "AIzaSyDiZ1TkEjn73ggXOXKBvdF6uP85sJKcHRA",
+        authDomain: "hiringglobal.firebaseapp.com",
+        projectId: "hiringglobal",
+        storageBucket: "hiringglobal.appspot.com",
+        messagingSenderId: "208778541383",
+        appId: "1:208778541383:web:1716c13a57f72214a13462",
+      };
 
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      console.log(firebase);
+      function uploadImage() {
+        const ref = firebase.storage().ref();
+        const file = document.querySelector("#choose-file").files[0];
+        const name = +new Date() + "-" + file.name;
+        const metadata = {
+          contentType: file.type,
+        };
+        const task = ref.child(name).put(file, metadata);
+        task
+          .then((snapshot) => snapshot.ref.getDownloadURL())
+          .then((url) => {
+            console.log(url);
+            alert("image uploaded successfully");
+            document.querySelector("#save-image").value = url;
+          })
+          .catch(console.error);
+      }
+      const errorMsgElement = document.querySelector("span#errorMsg");
+    </script>
+	<script src="/scripts/add-blog.js"></script>
+
+	<script
+		src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+		referrerpolicy="origin"></script>
+	<script type="text/javascript">
+      tinymce.init({
+        selector: '#content'
+      });
+  </script>
 	<!-- Main Script -->
-	<script th:src="@{/scripts/main.js}"></script>
-
+	<script src="scripts/main.js"></script>
 </body>
 
 <!-- Mirrored from themewagon.github.io/pinwheel/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:14 GMT -->

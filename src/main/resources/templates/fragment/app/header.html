@@ -1,12 +1,12 @@
 <th:block xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 	th:fragment="header">
-	<header class="header">
+	<header class="header" data-aos="fade-down">
 		<nav class="navbar container">
 			<!-- logo -->
 			<div class="order-0">
-				<a  th:href="@{/home}"> <img src="images/logo-pav.png" height="30"
-					width="147" alt="logo" />
+				<a th:href="@{/home}"> <img th:src="@{/images/logo-pav.png}"
+					height="30" width="147" alt="logo" />
 				</a>
 			</div>
 			<!-- navbar toggler -->
@@ -30,27 +30,34 @@
 			<ul id="nav-menu"
 				class="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5">
 				<li class="nav-item"><a th:href="@{/home}"
-					th:class="${route=='/home' ? 'nav-link active':'nav-link'}">Home</a></li>
-				<li class="nav-item"><a th:class="${route=='/about' ? 'nav-link active':'nav-link'}" href="about.html" class="nav-link">About</a>
-				</li>
-				<li class="nav-item"><a th:class="${route=='/stories' ? 'nav-link active':'nav-link'}" href="blog.html" class="nav-link">Blog</a>
-				</li>
-				<li class="nav-item"><a th:class="${route=='/change-logs' ? 'nav-link active':'nav-link'}" href="changelogs.html" class="nav-link">Changelogs</a>
-				</li>
-				<li class="nav-item"><a th:class="${route=='/contact' ? 'nav-link active':'nav-link'}" th:href="@{/contact}" class="nav-link">Contact</a>
-				</li>
+					th:class="${route=='/home' ? 'nav-link active':'nav-link'}">Trang chủ</a></li>
+				<li class="nav-item"><a
+					th:class="${route=='/about' ? 'nav-link active':'nav-link'}"
+					th:href="@{/about}" class="nav-link">Về chúng tôi</a></li>
+				<li class="nav-item"><a
+					th:class="${route=='/story' ? 'nav-link active':'nav-link'}"
+					th:href="@{/story}" class="nav-link">Bài đăng</a></li>
+				<li class="nav-item"><a
+					th:class="${route=='/change-logs' ? 'nav-link active':'nav-link'}"
+					th:href="@{/order-logs}" class="nav-link">Đơn hàng</a></li>
+				<li class="nav-item"><a
+					th:class="${route=='/contact' ? 'nav-link active':'nav-link'}"
+					th:href="@{/contact}" class="nav-link">Đặt dịch vụ</a></li>
+				<li class="nav-item"><a
+					th:class="${route=='/chat-contact' ? 'nav-link active':'nav-link'}"
+					th:href="@{/chat-contact}" class="nav-link">Tư vấn</a></li>
 				<li class="nav-item mt-3.5 lg:hidden"><a
 					class="btn btn-white btn-sm border-border" th:href="@{/login}"
-					sec:authorize="!isAuthenticated()">Sign In</a></li>
+					sec:authorize="!isAuthenticated()">Đăng nhập</a></li>
 				<li class="nav-item mt-3.5 lg:hidden"><a
 					sec:authorize="!isAuthenticated()" th:href="@{/logout}"
-					class="btn btn-white btn-sm border-border">Logout</a></li>
+					class="btn btn-white btn-sm border-border">Đăng xuất</a></li>
 
 			</ul>
 			<div
 				class="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
 				<a class="btn btn-white btn-sm" sec:authorize="!isAuthenticated()"
-					th:href="@{/login}">Sign In</a> <a class="btn btn-white btn-sm"
+					th:href="@{/login}">Đăng nhập</a> <a class="btn btn-white btn-sm"
 					sec:authorize="isAuthenticated()" th:href="@{/}"
 					th:text="${'Hi, ' +#authentication.getPrincipal().name}"></a>
 			</div>

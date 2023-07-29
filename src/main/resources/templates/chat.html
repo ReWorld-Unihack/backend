@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<!-- Mirrored from themewagon.github.io/pinwheel/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:13 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+<head>
+<!-- theme meta -->
+<meta name="theme-name" content="Pinwheel" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="theme-color" media="(prefers-color-scheme: light)"
+	content="#fff" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)"
+	content="#000" />
+<meta name="generator" content="gulp" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- responsive meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+<link rel="icon"
+	href="https://phucanviendn.com/wp-content/uploads/2023/04/cropped-logo-square-nontitle-32x32.webp"
+	sizes="32x32" />
+
+<!-- title -->
+<title>Forever Pawprints</title>
+
+<!-- noindex robots -->
+<meta name="robots" content="" />
+
+<!-- meta-description -->
+<meta name="description" content="meta description" />
+
+<!-- author from config.json -->
+<meta name="author" content="{config.metadata.meta_author}" />
+
+<!-- og-title -->
+<meta property="og:title" content="" />
+
+<!-- og-description -->
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+
+<!-- twitter-title -->
+<meta name="twitter:title" content="" />
+
+<!-- twitter-description -->
+<meta name="twitter:description" content="" />
+
+<!-- og-image -->
+<meta property="og:image" content="" />
+
+<!-- twitter-image -->
+<meta name="twitter:image" content="" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- google font css -->
+<link rel="preconnect" href="https://fonts.googleapis.com/" />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&amp;display=swap"
+	rel="stylesheet" />
+
+<!-- styles -->
+<link rel="stylesheet" href="/styles/chat.css" />
+<link rel="icon" sizes="32x32" th:href="@{/images/logo-pavp.png}">
+<!-- Swiper slider -->
+<link rel="stylesheet" href="plugins/swiper/swiper-bundle.css" />
+
+<!-- Fontawesome -->
+<link rel="stylesheet" href="plugins/font-awesome/v6/brands.css" />
+<link rel="stylesheet" href="plugins/font-awesome/v6/solid.css" />
+<link rel="stylesheet" href="plugins/font-awesome/v6/fontawesome.css" />
+<link rel="icon" sizes="32x32" th:href="@{/images/logo-pavp.png}">
+<!-- Main Stylesheet -->
+<link href="styles/main.css" rel="stylesheet" />
+</head>
+
+<div th:replace="fragment/app/header.html :: header"></div>
+
+<body>
+	<!-- floating assets -->
+	<img class="floating-bubble-1 absolute right-0 top-0 -z-[1]"
+		src="images/floating-bubble-1.svg" alt="" />
+	<img class="floating-bubble-2 absolute left-0 top-[387px] -z-[1]"
+		src="images/floating-bubble-2.svg" alt="" />
+	<img class="floating-bubble-3 absolute right-0 top-[605px] -z-[1]"
+		src="images/floating-bubble-3.svg" alt="" />
+	<!-- ./end floating assets -->
+
+	<!-- Common hero -->
+	<section class="page-hero pt-16 pb-6">
+		<div class="container">
+			<div class="text-center">
+				<ul
+					class="breadcrumb inline-flex h-8 items-center justify-center space-x-2 rounded-3xl bg-theme-light px-4 py-2">
+					<li class="leading-none text-dark"><a
+						class="inline-flex items-center text-primary" href="#"> <svg
+								class="mr-1.5" width="15" height="15" viewBox="0 0 16 16"
+								fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+									d="M13.1769 15.0588H10.3533V9.41178H5.64744V15.0588H2.82391V6.58825H1.88274V16H14.118V6.58825H13.1769V15.0588ZM6.58862 15.0588V10.353H9.41215V15.0588H6.58862ZM15.8084 6.09225L15.2512 6.85178L8.00038 1.52472L0.749559 6.8499L0.192383 6.09131L8.00038 0.357666L15.8084 6.09225Z"
+									fill="black" />
+                </svg> <span class="text-sm leading-none">Trang chủ</span>
+					</a></li>
+					<li class="leading-none text-dark"><span
+						class="text-sm leading-none">/ Nhắn tin</span></li>
+				</ul>
+			</div>
+			<div class="page-hero-content mx-auto max-w-[768px] text-center">
+				<h1 class="mb-5 mt-8">Tư vấn dịch vụ</h1>
+			</div>
+		</div>
+	</section>
+	<!-- end Common hero -->
+
+	<section class="section pt-0">
+		<div class="container">
+			<div class="row">
+				<div class="container clearfix">
+					<div class="chat">
+						<div class="chat-header clearfix">
+							<img src="/images/avatar_tu_van_vien.jpg" alt="avatar" />
+
+							<div class="chat-about">
+								<div class="chat-with">Chat với ForeverPawprints</div>
+								<div class="chat-num-messages">Tư vấn viên</div>
+							</div>
+							<i class="fa fa-star"></i>
+						</div>
+						<!-- end chat-header -->
+
+						<div class="chat-history">
+							<ul>
+								<li class="clearfix">
+									<div class="message-data align-right">
+										<span class="message-data-time">10:10 AM, Today</span> &nbsp;
+										&nbsp; <span class="message-data-name">Bạn</span> <i
+											class="fa fa-circle me"></i>
+									</div>
+									<div class="message other-message float-right">Xin chào,
+										có ai chat được bây giờ không ạ!</div>
+								</li>
+
+								<li>
+									<div class="message-data">
+										<span class="message-data-name"><i
+											class="fa fa-circle online"></i> ForeverPawprints</span> <span
+											class="message-data-time">10:12 AM, Today</span>
+									</div>
+									<div class="message my-message">Xin chào bạn! Chúng tôi
+										có thể giúp gì cho bạn ạ ^_^</div>
+								</li>
+							</ul>
+							<div id="message-loader" style="display: none">
+								<i class="fa fa-circle online load-dot-1"></i> <i
+									class="fa fa-circle online load-dot-2" style="color: #aed2a6"></i>
+								<i class="fa fa-circle online load-dot-3" style="color: #dae9da"></i>
+							</div>
+						</div>
+						<!-- end chat-history -->
+
+						<div class="chat-message clearfix">
+							<textarea name="message-to-send" id="message-to-send"
+								placeholder="Nhập tin nhắn..." rows="3"></textarea>
+
+							<i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp; <i
+								class="fa fa-file-image-o"></i>
+
+							<button>Gửi</button>
+						</div>
+						<!-- end chat-message -->
+					</div>
+					<!-- end chat -->
+				</div>
+				<!-- end container -->
+
+				<script id="message-template" type="text/x-handlebars-template">
+            <li class="clearfix">
+              <div class="message-data align-right">
+                <span class="message-data-time">{{time}}, Today</span>
+                &nbsp; &nbsp;
+                <span class="message-data-name">Bạn</span>
+                <i class="fa fa-circle me"></i>
+              </div>
+              <div class="message other-message float-right">
+                {{messageOutput}}
+              </div>
+            </li>
+          </script>
+
+				<script id="message-response-template"
+					type="text/x-handlebars-template">
+            <li>
+              <div class="message-data">
+                <span class="message-data-name"><i
+                    class="fa fa-circle online"
+                  ></i>
+                  ForeverPawprints</span>
+                <span class="message-data-time">{{time}}, Today</span>
+              </div>
+              <div class="message my-message">
+                {{response}}
+              </div>
+            </li>
+          </script>
+			</div>
+		</div>
+	</section>
+
+	<div th:replace="fragment/app/footer.html :: footer"></div>
+	<!-- jQuery -->
+	<!-- <script src="plugins/jquery/jquery.min.js"></script> -->
+	<!-- Swiper JS -->
+	<script src="plugins/swiper/swiper-bundle.js"></script>
+	<script src="plugins/shufflejs/shuffle.js"></script>
+
+	<!-- Main Script -->
+	<script src="scripts/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+	<script id="message-response-template"
+		type="text/x-handlebars-template">
+      <li>
+        <div class="message-data">
+          <span class="message-data-name"><i class="fa fa-circle online"></i>
+            ForeverPawprints</span>
+          <span class="message-data-time">{{time}}, Today</span>
+        </div>
+        <div class="message my-message">
+          {{response}}
+        </div>
+      </li>
+    </script>
+	<script src="/scripts/chat.js"></script>
+</body>
+
+<!-- Mirrored from themewagon.github.io/pinwheel/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 27 Jul 2023 04:37:14 GMT -->
+</html>
